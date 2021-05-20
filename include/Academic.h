@@ -1,37 +1,35 @@
 #ifndef ACADEMIC_H
 #define ACADEMIC_H
-#include <string.h>
-#include <iostream>
-using namespace std;
-struct Date
-{
-    int day;
-    int month;
-    int year;
-};
+#include "../include/SchoolYear.h"
+#include "../include/Student.h"
+#include "../include/Semester.h"
+#include "../include/Course.h"
 struct Academic
 {
     char* Subject;
-    Date birth;
+    date birth;
     char* name;
     char* user;
     int Pass;
 };
-struct node
+struct nodeA
 {
     Academic data;
-    node* pnext;
+    nodeA* pnext;
 };
 struct list
 {
-    node* pHead;
-    node* pTail;
+    nodeA* pHead;
+    nodeA* pTail;
 };
 void init(list& l);
-node* Register();
-void inputDate(Date &a);
+nodeA* Register();
+void inputDate(date &a);
 void ViewProfile(node* p);
-void AddAcademic(list& l);
-void DelAcademic(list& l,char* name);
-node* Search(list&l,char* name);
+nodeA* Search(list&l,char* name);
+void AddStudent(Class& l,node*& p);
+Class createClass();
+semester createSem(listS& l);
+nodeS* createSchool(int year1, int year2);
+nodeS* createSchool();
 #endif
