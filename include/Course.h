@@ -1,7 +1,7 @@
 #ifndef COURSE_H
 #define COURSE_H
-#include "../include/SchoolYear.h"
-#include "../include/Semester.h"
+#include "../include/Student.h"
+#include "../include/Date.h"
 struct session
 {
     char* sess[2];
@@ -14,14 +14,24 @@ struct course
     char* teacher;
     int credits;
     int StudentNum;
-    Student* arr;
-    session* taught;
+    Student arr[50];
+    session taught[2];
 };
 struct nodeC
 {
     course data;
     nodeC* pnext;
 };
+struct sem
+{
+    int idx;
+    date start;
+    date end;
+    nodeC* Head;
+    nodeC* Tail;
+};
 nodeC* createCouse();
-void addCourse(semester& p);
+void addCourse(sem& s,nodeC* &p);
+void init(sem& a);
+void ViewCouse(sem s);
 #endif

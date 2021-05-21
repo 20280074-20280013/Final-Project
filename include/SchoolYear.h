@@ -1,13 +1,15 @@
 #ifndef SCHOOLYEAR_H
 #define SCHOOLYEAR_H
-#include "../include/Student.h"
-#include "../include/Academic.h"
-#include "../include/Semester.h"
+#include <iostream>
+#include <fstream>
+#include <string.h>
+using namespace std;
+#include "../include/Course.h"
 struct School
 {
     int year1;
     int year2;
-    semester Sem[3];
+    sem Sem[3];
 };
 struct nodeS
 {
@@ -21,5 +23,8 @@ struct listS
 };
 void AddSchool(listS& l,nodeS* &a);
 void initSchool(listS& l);
+sem creSem(listS& l);
 void WriteSchool(listS& l);
+nodeS* createSchool(int year1, int year2);
+nodeS* createSchool();
 #endif

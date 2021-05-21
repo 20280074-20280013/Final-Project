@@ -3,7 +3,6 @@
 #include<iostream>
 #include<string.h>
 #include <fstream>
-#include "../include/Semester.h"
 #include "../include/Date.h"
 using namespace std;
 struct Student
@@ -29,5 +28,7 @@ struct Class
 	node* pTail;
 };
 void Init(Class& c);
-void ViewCouse(semester s);
+void AddStudent(Class &l,node* &p);
+void quickinput(Class& a);
+Class createClass();
 #endif

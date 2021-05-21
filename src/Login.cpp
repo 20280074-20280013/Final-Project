@@ -11,12 +11,13 @@ bool Login(Class l)
 		cin.getline(tempID, 20 + 1);
 		inputID = new char[strlen(tempID) + 1];
 		strcpy(inputID, tempID);
-		for (node* p = l.pHead;p != NULL;p->pNext)
+		node* temp = l.pHead;
+		while(temp != NULL)
 		{
-			if (strcmp(inputID, p->data.ID) == 0)
+			if (strcmp(inputID, temp->data.ID) == 0)
 			{
 				int cnt1 = 0;
-				char* InputPass = nullptr;
+				char* InputPass = NULL;
 				char tempPass[10];
 				cout << "Input your Password: ";
 				while (cnt1 < 3)
@@ -25,7 +26,7 @@ bool Login(Class l)
 					cin.getline(tempPass, 10 + 1);
 					InputPass = new char[strlen(tempPass + 1)];
 					strcpy(InputPass, tempPass);
-					if (strcmp(InputPass, p->data.pass) == 0)
+					if (strcmp(InputPass, temp->data.pass) == 0)
 					{
 						cout << "Successed!";
 						delete[] inputID;
@@ -43,6 +44,7 @@ bool Login(Class l)
 				delete[] InputPass;
 				return false;
 			}
+			temp = temp->pNext;
 		}
 		cnt++;
 		if(cnt<=2)
