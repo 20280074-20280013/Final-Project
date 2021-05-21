@@ -10,7 +10,7 @@ struct Academic
     date birth;
     char* name;
     char* user;
-    int Pass;
+    char* pass;
 };
 struct nodeA
 {
@@ -24,8 +24,6 @@ struct list
 };
 void init(list& l);
 nodeA* Register();
-void inputDate(date &a);
-void ViewProfile(node* p);
 nodeA* Search(list&l,char* name);
 void AddStudent(Class& l,node*& p);
 Class createClass();

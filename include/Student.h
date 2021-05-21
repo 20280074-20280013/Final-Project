@@ -4,13 +4,8 @@
 #include<string.h>
 #include <fstream>
 #include "../include/Semester.h"
+#include "../include/Date.h"
 using namespace std;
-struct date
-{
-	int day;
-	int month;
-	int year;
-};
 struct Student
 {
 	int No;

@@ -1,25 +1,24 @@
 #include "../include/Academic.h"
-void inputDate(date &a)
-{
-    cout << "day/month/year of birth ";
-    cin >> a.day >> a.month >> a.year;
-}
 nodeA* Register()
 {
     char temp[100];
     char temp2[100];
     char temp3[100];
+    char temp1[100];
     nodeA* p = new nodeA;
     if(p== NULL)
     {
         return;
     }
     cout << "Name ";
+    cin.ignore();
     cin.getline(temp,100);
     p->data.name = new char[strlen(temp)+1];
     strcpy(p->data.name,temp);
     cout << "Password ";
-    cin>> p->data.Pass;
+    cin.getline(temp1,100);
+    p->data.pass = new char[strlen(temp1)+1];
+    strcpy(p->data.pass,temp1);
     cout << "Username ";
     cin.getline(temp2,100);
     p->data.user = new char[strlen(temp2)+1];
@@ -30,15 +29,6 @@ nodeA* Register()
     strcpy(p->data.Subject,temp3);
     inputDate(p->data.birth);
     return p;
-}
-void ViewProfile(nodeA* p)
-{
-    cout << "Name " <<endl;
-    cout << p->data.name<<endl;
-    cout << "Birth "<<endl;
-    cout <<p->data.birth.day << "/" << p->data.birth.month << "/" << p->data.birth.year;
-    cout << "Subject interest " << endl;
-    cout << p->data.Subject << endl;
 }
 void init(list& l)
 {
@@ -80,6 +70,7 @@ Class createClass()
     char temp[100];
     Class a;
     cout << "Class name ";
+    cin.ignore();
     cin.getline(temp,100);
     a.ClassName = new char[strlen(temp)+1];
     strcpy(a.ClassName,temp);

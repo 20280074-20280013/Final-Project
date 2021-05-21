@@ -23,5 +23,5 @@ struct nodeC
     nodeC* pnext;
 };
 nodeC* createCouse();
-void addCourse(semester& s);
+void addCourse(semester& p);
 #endif
